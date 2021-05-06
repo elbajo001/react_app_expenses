@@ -30,7 +30,7 @@ const useGetExpensesByMonth = () => {
         }
     }, [user])
 
-    return [expenses];
+    return expenses;
 }
  
 export default useGetExpensesByMonth;

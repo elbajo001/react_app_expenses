@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
 import convertToMoney from '../functions/convertToMoney'
+import {useTotalByMonth} from '../contexts/TotalExpensedByMonthContext'
 
 const BarTotal = styled.div`
     background: ${theme.colorSecundario};
@@ -22,10 +23,12 @@ const BarTotal = styled.div`
 `;
 
 const BarTotalExpensed = () => {
+    const {total} = useTotalByMonth();
+
     return ( 
         <BarTotal>
             <p><b>Total Expensed</b> by month:</p>
-            <p>{convertToMoney(20000.00)}</p>
+            <p>{convertToMoney(total)}</p>
         </BarTotal>
      );
 }
