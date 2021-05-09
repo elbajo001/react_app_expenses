@@ -47,7 +47,7 @@ export default function Login() {
             setStateAlert(true);
             setAlert({
                 type: 'error',
-                msg: 'Por favor, ingresa un correo válido.'
+                msg: 'Please, enter a valid email .'
             })
             return;
         }
@@ -56,7 +56,7 @@ export default function Login() {
             setStateAlert(true);
             setAlert({
                 type: 'error',
-                msg: 'Por favor, completa todos los campos.'
+                msg: 'Please, complete all fields.'
             })
             return;
         }
@@ -70,13 +70,13 @@ export default function Login() {
             let msg;
 			switch(error.code){
                 case 'auth/wrong-password':
-					msg = 'La contraseña no es correcta.'
+					msg = 'Incorrect password.'
 					break;
 				case 'auth/user-not-found':
 					msg = 'No se encontro ninguna cuenta con este correo electrónico.'
 					break;
 				default:
-					msg = 'Hubo un error al intentar crear la cuenta.'
+					msg = 'An error has ocurred trying to create the account.'
 				    break;
 			}
 

@@ -48,6 +48,12 @@ const ContenedorInput = styled.div`
             width: 100%;
         }
     }
+ 
+    @media(max-width: 30rem){ /* 950px */
+        input {
+            font-size: 1.2rem;
+        }   
+    }
 `;
 
 const DatePicker = ({date, setDate}) => {

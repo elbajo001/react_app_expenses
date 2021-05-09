@@ -56,7 +56,7 @@ const ListCategoriesElement = styled.li`
 const Category = styled.div`
     font-weight: 500;
     font-size: 1.25rem; /* 20px */
-    text-transform: uppercase;
+    text-transform: capitalize;
     display: flex;
     align-items: center;
     

@@ -18,7 +18,7 @@ const Title = styled.h1`
     font-size: 2rem; /* 40px */
  
     @media(max-width: 60rem){ /* 950px */
-        font-size: 1.5rem; /* 32px */
+        font-size: 1.2rem; /* 32px */
     }
 `;
  
@@ -44,6 +44,23 @@ const ContainerButtons = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media(max-width: 30rem){ /* 950px */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        a {
+            width: 16rem;
+            justify-content: end;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            margin: 1px auto;
+        }
+        & > button {
+            /* display: flex;
+            justify-content: end; */
+        }
+    }
 `;
 
 export {Header, Title, ContainerHeader, ContainerButtons};

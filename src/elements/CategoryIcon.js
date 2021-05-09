@@ -11,21 +11,21 @@ import {ReactComponent as IconoTransporte} from './../imagenes/cat_transporte.sv
 
 const CategoryIcon = ({id}) => {
 	switch(id){
-		case 'comida':
+		case 'food':
 			return <IconoComida />;
-		case 'compras':
+		case 'accounts and payments':
 			return <IconoCompras />;
-		case 'cuentas y pagos':
+		case 'home':
 			return <IconoCuentasYPagos />;
-		case 'diversion':
+		case 'transport':
 			return <IconoDiversion />;
-		case 'hogar':
+		case 'clothes':
 			return <IconoHogar />;
-		case 'ropa':
+		case 'health & care':
 			return <IconoRopa />;
-		case 'salud e higiene':
+		case 'purchases':
 			return <IconoSaludEHigiene />;
-		case 'transporte':
+		case 'entertainment':
 			return <IconoTransporte />;
 		default:
 		break;

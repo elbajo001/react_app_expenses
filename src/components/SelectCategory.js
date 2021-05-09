@@ -10,7 +10,7 @@ const ContainerSelect = styled.div`
     border-radius: 0.625rem; /* 10px */
     position: relative;
     height: 5rem; /* 80px */
-    width: 40%;
+    min-width: 40%;
     padding: 0px 1.25rem; /* 20px */
     font-size: 1.5rem; /* 24px */
     text-align: center;
@@ -20,12 +20,25 @@ const ContainerSelect = styled.div`
     &:hover {
         background: ${theme.grisClaro2};
     }
+    @media(max-width: 60rem) {
+        & > * {
+            text-align: center;
+            align-items: center;
+        }
+    }
+
+    @media(max-width: 30rem) {
+        & > * {
+            font-size: 1.2rem;
+        }
+    }
 `;
  
 const OptionSelected = styled.div`
     width: 100%;
-    text-transform: uppercase;
     display: flex;
+    
+    text-transform: capitalize;
     align-items: center;
     justify-content: space-between;
     svg {
@@ -49,6 +62,7 @@ const Options = styled.div`
 const Option = styled.div`
     padding: 1.25rem; /* 20px */
     display: flex;
+    align-items: center;
     svg {
         width: 28px;
         height: auto;
@@ -61,17 +75,16 @@ const Option = styled.div`
 
 export default function SelectCategory({category, setCategory}) {
     const [showSelect, setShowSelect] = useState(false)
-    const [optionSelect, setOptionSelect] = useState(false)
     	
 	const categories = [
-        {id: 'comida', texto: 'Comida'},
-        {id: 'cuentas y pagos', texto: 'Cuentas y pagos'},
-        {id: 'hogar', texto: 'Hogar'},
-        {id: 'transporte', texto: 'Transporte'},
-        {id: 'ropa', texto: 'Ropa'},
-        {id: 'salud e higiene', texto: 'Salud e Higiene'},
-        {id: 'compras', texto: 'Compras'},
-        {id: 'diversion', texto: 'Diversion'}
+        {id: 'food', texto: 'Food'},
+        {id: 'accounts and payments', texto: 'Accounts and Payments'},
+        {id: 'home', texto: 'Home'},
+        {id: 'transport', texto: 'Transport'},
+        {id: 'clothes', texto: 'Clothes'},
+        {id: 'health & care', texto: 'Health & Care'},
+        {id: 'purchases', texto: 'Purchases'},
+        {id: 'entertainment', texto: 'Entertainment'}
     ]
 
     const handleClick = (e) => {

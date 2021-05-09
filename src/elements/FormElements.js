@@ -6,7 +6,7 @@ const ContainerFilters = styled.div`
     justify-content: space-between;
     margin-bottom: 1.87rem; /* 30px */
  
-    @media(max-width: 60rem){ /* 950px */
+    @media(max-width: 30rem){ /* 950px */
         flex-direction: column;
  
         & > * {
@@ -35,23 +35,29 @@ const Form = styled.form`
     @media(max-width: 60rem){ /* 950px */
         justify-content: start;
     }
+ 
+    @media(max-width: 30rem){ /* 950px */
+        padding: 0 0.5rem; /* 40px */
+    }
 `;
  
 const Input = styled.input`
     font-size: 1.4rem; /* 40px */
-    text-transform: uppercase;
     border: none;
     border-bottom: 2px solid ${theme.grisClaro2};
     outline: none;
  
     @media(max-width: 60rem){ /* 950px */
-        font-size: 1rem; /* 24px */
+        font-size: 1.2rem; /* 24px */
     }
 `;
  
 const InputBig = styled(Input)`
-    font-size: 3.5rem; /* 70px */
+    font-size: 2.5rem; /* 70px */
     font-weight: bold;
+    @media(max-width: 60rem){ /* 950px */
+        font-size: 1.5rem; /* 24px */
+    }
 `;
  
 const ContainerButton = styled.div`

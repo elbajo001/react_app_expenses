@@ -17,7 +17,7 @@ import editExpense from '../firebase/editExpense'
 const FormExpenses = ({expense}) => {
     const [inputDescription, setInputDescription] = useState('')
     const [inputAmount, setInputAmount] = useState('') 
-    const [category, setCategory] = useState('hogar')
+    const [category, setCategory] = useState('home')
     const [date, setDate] = useState(new Date())
     const {user} = useAuth();
     const [stateAlert, setStateAlert] = useState(false)

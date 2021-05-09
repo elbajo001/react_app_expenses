@@ -24,6 +24,12 @@ const Button = styled(Link)`
         height: ${(props) => props.iconBig ? '100%' : '0.75rem;'};  /* 12px */
         fill: white;
     }
+
+    @media(max-width: 30rem) {
+        margin-left: 0; /* 20px */
+        & > * {
+        }        
+    }
 `;
 
 export default Button;
