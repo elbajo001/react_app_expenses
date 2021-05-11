@@ -24,7 +24,6 @@ const ModalDeleteExpense = ({close, setClose, expense, setIsDeleted}) => {
         <>
             <ContainerModal>
                 <ModalContent>
-                    {/* <p>¿Are you sure you want to delete {expense.inputDescription}?</p> */}
                     <ButtonIcon onClick={handleClose}><IconDelete /></ButtonIcon>
                     <h1>Delete Expense</h1>
                     <p>¿Sure you want to delete <b>{expense.inputDescription}</b>?</p>

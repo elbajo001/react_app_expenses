@@ -62,10 +62,6 @@ const Alert = ({type, msg, stateAlert, setStateAlert}) => {
 				setStateAlert(false);
 			}, 4000);
 		}
-
-		// Pasamos una funcion de limpieza. Esta funcion se ejecuta si el componente se desmonta.
-		// Lo que hacemos es limpiar el tiempo para que no intente cambiar el estado si el componente no esta en pantalla.
-		// Es importante para poder cambiar de componentes en pantalla sin errores.
 		return(() => clearTimeout(time));
 	}, [stateAlert, setStateAlert]);
 

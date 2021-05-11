@@ -13,7 +13,6 @@ const useGetExpensesByMonth = () => {
         if (user) {
             const unsuscribe = db.collection('expenses')
             .orderBy('date', 'desc')
-            //Obtiene los gastos entre el rango desde el inicio de mes hasta el fin de mes
             .where('date', '>=', varStartOfMonth)
             .where('date', '<=', varEndOfMonth)
             .where('user', '==', user.uid)
@@ -24,8 +23,6 @@ const useGetExpensesByMonth = () => {
                     }))
                 })
             })
-            // UseEffect tiene que retornar una función que se va a ejecutar cuando se desmonte el componente
-            // En este caso, queremos que se ejecute unsuscribe a la colección de firestore
             return unsuscribe;
         }
     }, [user])

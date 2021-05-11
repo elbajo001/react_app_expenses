@@ -25,12 +25,8 @@ const FormExpenses = ({expense}) => {
     const history = useHistory()
     
     useEffect(() => {
-        // Comprobamos si ya hay algun gasto.
-		// De ser asi establecemos todo el state con los valores del gasto.
-		if(expense){
-			// Comprobamos que el gasto sea del usuario actual.
-			// Para eso comprobamos el uid guardado en el gasto con el uid del usuario.
-            if(expense.data().user === user.uid) {
+        if(expense){
+		    if(expense.data().user === user.uid) {
                 setCategory(expense.data().category);
                 setDate(fromUnixTime(expense.data().date));
                 setInputDescription(expense.data().inputDescription);
@@ -49,42 +45,45 @@ const FormExpenses = ({expense}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Se formatea el número en float con 2 decimales
         let amountFormat = parseFloat(inputAmount).toFixed(2);
         let dateFormat = getUnixTime(date);
-        // Comprobamos que haya descripción y valor
         if (inputDescription !== '' && inputAmount !== '') {
             if (amountFormat) {
-                if (expense) {
-                    editExpense({
-                        id: expense.id,
-                        category: category, 
-                        description: inputDescription,
-                        amount: amountFormat,
-                        date: dateFormat,
-                    })
-                    .then(() => {history.push('/list')})
-                } else {
-                    addExpense({
-                        category: category, 
-                        description: inputDescription,
-                        amount: amountFormat,
-                        date: dateFormat,
-                        uidUser: user.uid
-                    })
-                    .then(() => {
-                        setCategory('hogar');
-                        setInputAmount('');
-                        setInputDescription('');
-                        setDate(new Date());
+                if (!isNaN(dateFormat)) {
+                    if (expense) {
+                        editExpense({
+                            id: expense.id,
+                            category: category, 
+                            description: inputDescription,
+                            amount: amountFormat,
+                            date: dateFormat,
+                        })
+                        .then(() => {history.push('/list')})
+                    } else {
+                        addExpense({
+                            category: category, 
+                            description: inputDescription,
+                            amount: amountFormat,
+                            date: dateFormat,
+                            uidUser: user.uid
+                        })
+                        .then(() => {
+                            setCategory('home');
+                            setInputAmount('');
+                            setInputDescription('');
+                            setDate(new Date());
 
-                        setStateAlert(true);
-                        setAlert({type: "exito", msg: "Expenses added correctly."});    
-                    })
-                    .catch((error) => {
-                        setStateAlert(true);
-                        setAlert({type: "error", msg: "An error has occurred."});    
-                    })
+                            setStateAlert(true);
+                            setAlert({type: "exito", msg: "Expenses added correctly."});    
+                        })
+                        .catch((error) => {
+                            setStateAlert(true);
+                            setAlert({type: "error", msg: "An error has occurred."});    
+                        })
+                    }
+                } else {
+                    setStateAlert(true);
+                    setAlert({type: "error", msg: "Invalid date."});          
                 }
             } else {
                 setStateAlert(true);

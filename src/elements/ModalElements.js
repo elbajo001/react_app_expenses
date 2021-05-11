@@ -5,7 +5,7 @@ const ContainerModal = styled.div`
     display: ${(props) => {
         if(props.close) return 'none';
         else return 'block';
-    }}; /* Hidden by default */
+    }}; 
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;

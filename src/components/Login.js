@@ -41,7 +41,6 @@ export default function Login() {
         setStateAlert(false);
         setAlert({});
 
-        //Comprobamos el correo electrónico sea válido
         const regexEmail = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
         if (!regexEmail.test(email)) {
             setStateAlert(true);
@@ -73,10 +72,10 @@ export default function Login() {
 					msg = 'Incorrect password.'
 					break;
 				case 'auth/user-not-found':
-					msg = 'No se encontro ninguna cuenta con este correo electrónico.'
+					msg = 'No account was found with this email.'
 					break;
 				default:
-					msg = 'An error has ocurred trying to create the account.'
+					msg = 'An error has ocurred trying to enter.'
 				    break;
 			}
 

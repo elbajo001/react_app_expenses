@@ -56,10 +56,6 @@ const ContainerButtons = styled.div`
             justify-content: center;
             margin: 1px auto;
         }
-        & > button {
-            /* display: flex;
-            justify-content: end; */
-        }
     }
 `;
 

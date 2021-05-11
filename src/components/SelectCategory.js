@@ -40,11 +40,15 @@ const OptionSelected = styled.div`
     
     text-transform: capitalize;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    margin: 0 10%;
     svg {
         width: 1.25rem; /* 20px */
         height: auto;
         margin-left: 1.25rem; /* 20px */
+        display: block;
+        position: absolute;
+        right: 1.25rem;
     }
 `;
  
@@ -78,7 +82,7 @@ export default function SelectCategory({category, setCategory}) {
     	
 	const categories = [
         {id: 'food', texto: 'Food'},
-        {id: 'accounts and payments', texto: 'Accounts and Payments'},
+        {id: 'accounts & payments', texto: 'Accounts & Payments'},
         {id: 'home', texto: 'Home'},
         {id: 'transport', texto: 'Transport'},
         {id: 'clothes', texto: 'Clothes'},

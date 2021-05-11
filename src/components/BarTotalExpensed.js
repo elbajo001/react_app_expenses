@@ -7,9 +7,8 @@ import {useTotalByMonth} from '../contexts/TotalExpensedByMonthContext'
 const BarTotal = styled.div`
     background: ${theme.colorSecundario};
     font-size: 1.25rem; /* 20px */
-    letter-spacing: 1px;
-    font-weight: 500;
-    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
     padding: 0.62rem 2.25rem; /* 10px 40px */
     color: #fff;
     display: flex;
@@ -27,7 +26,7 @@ const BarTotalExpensed = () => {
 
     return ( 
         <BarTotal>
-            <p><b>Total Expensed</b> by month:</p>
+            <p><b>Total expensed</b> by month:</p>
             <p>{convertToMoney(total)}</p>
         </BarTotal>
      );

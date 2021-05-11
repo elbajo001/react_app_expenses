@@ -44,13 +44,12 @@ export default function Signup() {
         setStateAlert(false);
         setAlert({});
 
-        //Comprobamos el correo electrónico sea válido
         const regexEmail = /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
         if (!regexEmail.test(email)) {
             setStateAlert(true);
             setAlert({
                 type: 'error',
-                msg: 'Por favor, ingresa un correo válido.'
+                msg: 'Please, enter a valid email .'
             })
             return;
         }
@@ -59,7 +58,7 @@ export default function Signup() {
             setStateAlert(true);
             setAlert({
                 type: 'error',
-                msg: 'Por favor, completa todos los campos.'
+                msg: 'Please, complete all fields.'
             })
             return;
         }
@@ -68,7 +67,7 @@ export default function Signup() {
             setStateAlert(true);
             setAlert({
                 type: 'error',
-                msg: 'Las contraseñas no coinciden.'
+                msg: 'Passwords do not match.'
             })
             return;
         }
@@ -82,16 +81,16 @@ export default function Signup() {
 			let msg;
 			switch(error.code){
 				case 'auth/invalid-password':
-					msg = 'La contraseña tiene que ser de al menos 6 caracteres.'
+					msg = 'Password must have at least 6 characters.'
 					break;
 				case 'auth/email-already-in-use':
-					msg = 'Ya existe una cuenta con el correo electrónico proporcionado.'
+					msg = 'This email is already being used.'
 				break;
 				case 'auth/invalid-email':
-					msg = 'El correo electrónico no es válido.'
+					msg = 'Email is invalid.'
 				break;
 				default:
-					msg = 'Hubo un error al intentar crear la cuenta.'
+					msg = 'An error has ocurred trying to create the account.'
 				break;
 			}
 

@@ -16,7 +16,6 @@ import Background from './elements/Background';
 import {AuthProvider} from './contexts/AuthContext';
 import {TotalExpensedProvider} from './contexts/TotalExpensedByMonthContext';
 import PrivateRoute from './components/PrivateRoute';
-import Exit from './components/Exit';
 
 WebFont.load({
     google: {
@@ -49,10 +48,6 @@ const Index = () => {
                                 <PrivateRoute path="/">
                                     <App />
                                 </PrivateRoute>
-    {/*                             <Route path="/categories" component={ExpensesByCategory} />
-                                <Route path="/list" component={ListExpenses} />
-                                <Route path="/edit/:id" component={EditExpenses} />
-                                <Route path="/" component={App} /> */}
                             </Switch>
                         </Container>
                     </BrowserRouter>

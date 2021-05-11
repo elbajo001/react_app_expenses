@@ -15,7 +15,7 @@ const useGetExpensedByMonthByCategory = () => {
             return objResult;
         }, {
             'food': 0,
-            'accounts and payments': 0,
+            'accounts & payments': 0,
             'home': 0,
             'transport': 0,
             'clothes': 0,

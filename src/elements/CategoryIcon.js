@@ -13,20 +13,20 @@ const CategoryIcon = ({id}) => {
 	switch(id){
 		case 'food':
 			return <IconoComida />;
-		case 'accounts and payments':
-			return <IconoCompras />;
-		case 'home':
+		case 'accounts & payments':
 			return <IconoCuentasYPagos />;
-		case 'transport':
-			return <IconoDiversion />;
-		case 'clothes':
+		case 'home':
 			return <IconoHogar />;
-		case 'health & care':
-			return <IconoRopa />;
-		case 'purchases':
-			return <IconoSaludEHigiene />;
-		case 'entertainment':
+		case 'transport':
 			return <IconoTransporte />;
+		case 'clothes':
+			return <IconoRopa />;
+		case 'health & care':
+			return <IconoSaludEHigiene />;
+		case 'purchases':
+			return <IconoCompras />;
+		case 'entertainment':
+			return <IconoDiversion />;
 		default:
 		break;
 	}

@@ -18,7 +18,7 @@ function parseDate(str, format) {
 }
 
 function formatDate(date, format) {
-return dateFnsFormat(date, format, { locale: es });
+    return dateFnsFormat(date, format, { locale: es });
 }
   
 
