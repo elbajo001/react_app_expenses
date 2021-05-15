@@ -13,11 +13,11 @@ export default function ExpensesByCategory() {
     return (
         <>
             <Helmet>
-                <title>Expenses by categories</title>
+                <title>Gastos por categorías</title>
             </Helmet>
             <Header>
                 <BtnBackward />
-                <Title>Expenses by categories</Title>
+                <Title>Gastos por categorías</Title>
             </Header>
             <ListOfCategories>
                 {expensesByCategory.map((element, index) => {

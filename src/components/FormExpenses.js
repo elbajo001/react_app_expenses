@@ -17,7 +17,7 @@ import editExpense from '../firebase/editExpense'
 const FormExpenses = ({expense}) => {
     const [inputDescription, setInputDescription] = useState('')
     const [inputAmount, setInputAmount] = useState('') 
-    const [category, setCategory] = useState('home')
+    const [category, setCategory] = useState('hogar')
     const [date, setDate] = useState(new Date())
     const {user} = useAuth();
     const [stateAlert, setStateAlert] = useState(false)
@@ -68,30 +68,30 @@ const FormExpenses = ({expense}) => {
                             uidUser: user.uid
                         })
                         .then(() => {
-                            setCategory('home');
+                            setCategory('hogar');
                             setInputAmount('');
                             setInputDescription('');
                             setDate(new Date());
 
                             setStateAlert(true);
-                            setAlert({type: "exito", msg: "Expenses added correctly."});    
+                            setAlert({type: "exito", msg: "Gasto agregado correctamente."});    
                         })
                         .catch((error) => {
                             setStateAlert(true);
-                            setAlert({type: "error", msg: "An error has occurred."});    
+                            setAlert({type: "error", msg: "Un error ha ocurrido."});    
                         })
                     }
                 } else {
                     setStateAlert(true);
-                    setAlert({type: "error", msg: "Invalid date."});          
+                    setAlert({type: "error", msg: "Fecha inválida."});          
                 }
             } else {
                 setStateAlert(true);
-                setAlert({type: "error", msg: "Invalid amount."});
+                setAlert({type: "error", msg: "Cantidad inválida."});
             }
         } else {
             setStateAlert(true);
-            setAlert({type: "error", msg: "Please, complete all fields."});
+            setAlert({type: "error", msg: "Por favor, completa todos los campos."});
         }
     }
 
@@ -112,7 +112,7 @@ const FormExpenses = ({expense}) => {
                     type="text"
                     name="description"
                     id="description"
-                    placeholder="Description"
+                    placeholder="Descripción"
                     value={inputDescription}
                     onChange={handleChange}
                 />
@@ -127,7 +127,7 @@ const FormExpenses = ({expense}) => {
             </div>
             <ContainerButton>
                 <Button as="button" primario conIcono>
-                    {expense ? 'Edit Expense' : 'Add Expense'} <IconPlus />
+                    {expense ? 'Editar Gasto' : 'Agregar Gasto'} <IconPlus />
                 </Button>
             </ContainerButton>
             <Alert

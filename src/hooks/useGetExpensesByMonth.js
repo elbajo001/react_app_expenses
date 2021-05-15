@@ -17,11 +17,9 @@ const useGetExpensesByMonth = () => {
             .where('date', '<=', varEndOfMonth)
             .where('user', '==', user.uid)
             .onSnapshot((snapshot) => {
-                snapshot.docs.forEach((doc) => {
-                    setExpenses(snapshot.docs.map((doc) => {
-                        return {...doc.data(), id: doc.id}
-                    }))
-                })
+                setExpenses(snapshot.docs.map((doc) => {
+                    return {...doc.data(), id: doc.id}
+                }))
             })
             return unsuscribe;
         }

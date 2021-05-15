@@ -10,14 +10,14 @@ export default function App() {
   return (
     <>
       <Helmet>
-        <title>Add Expense</title>
+        <title>Agregar Gasto</title>
       </Helmet>
       <Header>
         <ContainerHeader>
-          <Title>Add Expense</Title>
+          <Title>Agregar Gasto</Title>
           <ContainerButtons>
-            <Button to="/categories">Categories</Button>
-            <Button to="/list">Expense list</Button>
+            <Button to="/categories">Categorías</Button>
+            <Button to="/list">Lista de Gastos</Button>
             <BtnLogout />
           </ContainerButtons>
         </ContainerHeader>

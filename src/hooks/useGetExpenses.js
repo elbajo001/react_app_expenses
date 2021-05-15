@@ -14,7 +14,7 @@ const useGetExpenses = () => {
         db.collection('expenses')
         .where('user', '==', user.uid)
         .orderBy('date', 'desc')
-        .limit(3)
+        .limit(10)
         .startAfter(lastExpense)
         .onSnapshot((snapshot) => {
             if(snapshot.docs.length > 0) {
@@ -32,7 +32,7 @@ const useGetExpenses = () => {
         const unsuscribe = db.collection('expenses')
         .where('user', '==', user.uid)
         .orderBy('date', 'desc')
-        .limit(3)
+        .limit(10)
         .onSnapshot((snapshot) => {
             if (snapshot.docs.length > 0) {
                 setLastExpense(snapshot.docs[snapshot.docs.length - 1]);

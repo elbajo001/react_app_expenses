@@ -13,11 +13,11 @@ export default function EditExpenses() {
     return (
         <>
             <Helmet>
-                <title>Edit Expense</title>
+                <title>Editar Gasto</title>
             </Helmet>
             <Header>
                 <BtnBackward ruta={"/list"}/>
-                <Title>Edit Expense</Title>
+                <Title>Editar Gasto</Title>
             </Header>
             <FormExpenses expense={expense}/>
             <BarTotalExpensed />

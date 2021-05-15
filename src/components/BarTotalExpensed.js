@@ -26,7 +26,7 @@ const BarTotalExpensed = () => {
 
     return ( 
         <BarTotal>
-            <p><b>Total expensed</b> by month:</p>
+            <p><b>Total gastado</b> en el mes:</p>
             <p>{convertToMoney(total)}</p>
         </BarTotal>
      );

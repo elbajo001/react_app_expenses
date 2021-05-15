@@ -49,7 +49,7 @@ export default function Signup() {
             setStateAlert(true);
             setAlert({
                 type: 'error',
-                msg: 'Please, enter a valid email .'
+                msg: 'Por favor, ingrese un correo válido.'
             })
             return;
         }
@@ -58,7 +58,7 @@ export default function Signup() {
             setStateAlert(true);
             setAlert({
                 type: 'error',
-                msg: 'Please, complete all fields.'
+                msg: 'Por favor, complete todos los campos.'
             })
             return;
         }
@@ -67,7 +67,16 @@ export default function Signup() {
             setStateAlert(true);
             setAlert({
                 type: 'error',
-                msg: 'Passwords do not match.'
+                msg: 'Las contraseñas no coinciden.'
+            })
+            return;
+        }
+
+        if (pw.length < 6) {
+            setStateAlert(true);
+            setAlert({
+                type: 'error',
+                msg: 'La contraseña debe contener 6 caracteres como mínimo.'
             })
             return;
         }
@@ -81,16 +90,16 @@ export default function Signup() {
 			let msg;
 			switch(error.code){
 				case 'auth/invalid-password':
-					msg = 'Password must have at least 6 characters.'
+					msg = 'La contraseña debe contener 6 caracteres como mínimo.'
 					break;
 				case 'auth/email-already-in-use':
-					msg = 'This email is already being used.'
+					msg = 'El correo ya está siendo usado por otra cuenta.'
 				break;
 				case 'auth/invalid-email':
-					msg = 'Email is invalid.'
+					msg = 'Correo inválido.'
 				break;
 				default:
-					msg = 'An error has ocurred trying to create the account.'
+					msg = 'Un error ha ocurrido al intentar crear la cuenta. Intentalo más tarde.'
 				break;
 			}
 
@@ -101,13 +110,13 @@ export default function Signup() {
     return (
         <>
             <Helmet>
-                <title>Sign up</title>
+                <title>Registrarse</title>
             </Helmet>
             <Header>
                 <ContainerHeader>
-                    <Title>Sign up</Title>
+                    <Title>Registrarse</Title>
                     <div>
-                        <Button to="/log-in">Log in</Button>
+                        <Button to="/log-in">Ingresar</Button>
                     </div>
                 </ContainerHeader>
             </Header>
@@ -123,19 +132,19 @@ export default function Signup() {
                 <Input
                     type="password"
                     name="password"
-                    placeholder="password"
+                    placeholder="Contraseña"
                     value={pw}
                     onChange={handleChange}
                 />
                 <Input
                     type="password"
                     name="password2"
-                    placeholder="repeat password"
+                    placeholder="Repetir contraseña"
                     value={pw2}
                     onChange={handleChange}
                 />
                 <ContainerButton>
-                    <Button as="button" primario type="submit">Create Account</Button>
+                    <Button as="button" primario type="submit">Crear cuenta</Button>
                 </ContainerButton>
             </Form>
             <Alert 

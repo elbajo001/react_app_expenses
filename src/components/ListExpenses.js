@@ -45,7 +45,7 @@ export default function ListExpenses() {
     useEffect(() => {
         if(isDeleted) {
             setStateAlert(true);
-            setAlert({type: "exito", msg: "Expense deleted correctly."});
+            setAlert({type: "exito", msg: "Gasto eliminado correctamente."});
             setIsDeleted(false);
         }
     }, [isDeleted, setIsDeleted])
@@ -64,11 +64,11 @@ export default function ListExpenses() {
     return (
         <>
             <Helmet>
-                <title>Expense list</title>
+                <title>Lista de Gastos</title>
             </Helmet>
             <Header>
                 <BtnBackward />
-                <Title>Expense list</Title>
+                <Title>Lista de Gastos</Title>
             </Header>
             <List>
                 {expenses.map((expense, index) => {
@@ -108,13 +108,13 @@ export default function ListExpenses() {
                 })}
                 {thereIsMoreToLoading &&
                     <ContainerCentralButton>
-                        <ButtonLoadingMore onClick={() => getMoreExpenses()}>Show more</ButtonLoadingMore>
+                        <ButtonLoadingMore onClick={() => getMoreExpenses()}>Mostrar más</ButtonLoadingMore>
                     </ContainerCentralButton>
                 }
                 {expenses.length === 0 &&
                     <ContainerSubtitle>
-                        <Subtitle>No expenses to show.</Subtitle>
-                        <Button as={Link} to='/'>Add Expense</Button>
+                        <Subtitle>No hay gastos para mostrar.</Subtitle>
+                        <Button as={Link} to='/'>Agregar Gasto</Button>
                     </ContainerSubtitle>
                 }
             </List>

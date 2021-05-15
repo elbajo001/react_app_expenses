@@ -81,14 +81,14 @@ export default function SelectCategory({category, setCategory}) {
     const [showSelect, setShowSelect] = useState(false)
     	
 	const categories = [
-        {id: 'food', texto: 'Food'},
-        {id: 'accounts & payments', texto: 'Accounts & Payments'},
-        {id: 'home', texto: 'Home'},
-        {id: 'transport', texto: 'Transport'},
-        {id: 'clothes', texto: 'Clothes'},
-        {id: 'health & care', texto: 'Health & Care'},
-        {id: 'purchases', texto: 'Purchases'},
-        {id: 'entertainment', texto: 'Entertainment'}
+        {id: 'comida', texto: 'Comida'},
+        {id: 'cuentas & pagos', texto: 'Cuentas & Pagos'},
+        {id: 'hogar', texto: 'Hogar'},
+        {id: 'transporte', texto: 'Transporte'},
+        {id: 'ropa', texto: 'Ropa'},
+        {id: 'salud & higiene', texto: 'Salud & Higiene'},
+        {id: 'compras', texto: 'Compras'},
+        {id: 'diversion', texto: 'Diversión'}
     ]
 
     const handleClick = (e) => {

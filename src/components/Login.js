@@ -46,7 +46,7 @@ export default function Login() {
             setStateAlert(true);
             setAlert({
                 type: 'error',
-                msg: 'Please, enter a valid email .'
+                msg: 'Por favor, ingrese un correo válido.'
             })
             return;
         }
@@ -55,7 +55,7 @@ export default function Login() {
             setStateAlert(true);
             setAlert({
                 type: 'error',
-                msg: 'Please, complete all fields.'
+                msg: 'Por favor, complete todos los campos.'
             })
             return;
         }
@@ -69,13 +69,13 @@ export default function Login() {
             let msg;
 			switch(error.code){
                 case 'auth/wrong-password':
-					msg = 'Incorrect password.'
+					msg = 'Contraseña incorrecta.'
 					break;
 				case 'auth/user-not-found':
-					msg = 'No account was found with this email.'
+					msg = 'No existe una cuenta con estas credenciales.'
 					break;
 				default:
-					msg = 'An error has ocurred trying to enter.'
+					msg = 'Un error ha ocurrido al intentar ingresar. Intentalo más tarde.'
 				    break;
 			}
 
@@ -86,13 +86,13 @@ export default function Login() {
     return (
         <>
             <Helmet>
-                <title>Log in</title>
+                <title>Ingresar</title>
             </Helmet>
             <Header>
                 <ContainerHeader>
-                    <Title>Log in</Title>
+                    <Title>Ingresar</Title>
                     <div>
-                        <Button to="/sign-up">Sign up</Button>
+                        <Button to="/sign-up">Registrarse</Button>
                     </div>
                 </ContainerHeader>
             </Header>
@@ -108,12 +108,12 @@ export default function Login() {
                 <Input
                     type="password"
                     name="password"
-                    placeholder="password"
+                    placeholder="Contraseña"
                     value={pw}
                     onChange={handleChange}
                 />
                 <ContainerButton>
-                    <Button as="button" primario type="submit">Login</Button>
+                    <Button as="button" primario type="submit">Ingresar</Button>
                 </ContainerButton>
             </Form>
             <Alert 

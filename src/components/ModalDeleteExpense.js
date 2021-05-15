@@ -16,8 +16,8 @@ const ModalDeleteExpense = ({close, setClose, expense, setIsDeleted}) => {
     }
 
     const handleDelete = (id) => {
-        setClose(!close);
         deleteExpense(id);
+        setClose(!close);
         setIsDeleted(true);
     }
     return ( 
@@ -25,14 +25,14 @@ const ModalDeleteExpense = ({close, setClose, expense, setIsDeleted}) => {
             <ContainerModal>
                 <ModalContent>
                     <ButtonIcon onClick={handleClose}><IconDelete /></ButtonIcon>
-                    <h1>Delete Expense</h1>
-                    <p>¿Sure you want to delete <b>{expense.inputDescription}</b>?</p>
+                    <h1>Eliminar gasto</h1>
+                    <p>¿Estás seguro que quieres eliminar <b>{expense.inputDescription}</b> de tus gastos?</p>
                     <ModalButtons>
                         <ButtonActionCancel onClick={handleClose}>
-                            No, cancel
+                            No, cancelar
                         </ButtonActionCancel>
                         <ButtonActionDelete onClick={() => handleDelete(expense.id) }>
-                            Yes, delete
+                            Sí, eliminar
                         </ButtonActionDelete>
                     </ModalButtons>
                 </ModalContent>

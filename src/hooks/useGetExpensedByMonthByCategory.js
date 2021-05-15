@@ -14,14 +14,14 @@ const useGetExpensedByMonthByCategory = () => {
 
             return objResult;
         }, {
-            'food': 0,
-            'accounts & payments': 0,
-            'home': 0,
-            'transport': 0,
-            'clothes': 0,
-            'health & care': 0,
-            'purchases': 0,
-            'entertainment': 0,
+            'comida': 0,
+            'cuentas & pagos': 0,
+            'hogar': 0,
+            'transporte': 0,
+            'ropa': 0,
+            'salud & higiene': 0,
+            'compras': 0,
+            'diversion': 0,
         })
 
         setExpenseByCategory(Object.keys(sumExpenses).map((element) => {
